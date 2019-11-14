@@ -1,0 +1,49 @@
+{
+  "userDetails": {
+    "users": [{
+        "uid": "101590852450539536978",
+        "name": "Punith Gowda N",
+        "image": "https://lh3.googleusercontent.com/a-/AAuE7mDVwHhauttwavwJycmv7PhK-GrdSwoCKLSytD21=s96-c",
+        "email": "hi@punith.me",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": [],
+          "theaters": []
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
+      },
+      {
+        "uid": "112011073371985625063",
+        "name": "Punith N Gowda",
+        "image": "https://lh5.googleusercontent.com/-Qdhc-F8StnI/AAAAAAAAAAI/AAAAAAAAAAA/ACHi3reuBr3hmoKh0QhCkQVkGDafyxpxuA/s96-c/photo.jpg",
+        "email": "punithgowdanpg@gmail.com",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": "28",
+          "theaters": "Kapali"
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
+      }
+    ]
+  },
+  "theater": {
+    "theaters": [{
+      "tid": "1",
+      "name": "Kapali",
+      "city": "Bangalore",
+      "gLocation": "test",
+      "capacity": 50,
+      "movies": [
+        474350
+      ]
+    }]
+  }
+}

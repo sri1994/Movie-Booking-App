@@ -1,0 +1,64 @@
+.cards-container {
+  margin-top: 25px;
+  justify-content: space-around;
+  align-items: space-evenly;
+}
+
+.seach-movies-cards {
+  margin-bottom: 20px;
+}
+
+.virtualScrollContainer {
+  height: 100vh;
+}
+
+.mat-tab-label-active {
+  color: rgb(241, 246, 248);
+}
+
+.mat-tab-label-inactive {
+  color: rgb(248, 241, 241);
+}
+
+.dropDowns {
+  background-color: rgb(56, 146, 206);
+  height: 30px;
+  width: 100%;
+  position: fixed;
+}
+
+.tabsGroup {
+  margin-top: 35px;
+}
+
+.mat-tab-label,
+.mat-tab-link {
+  color: #fff;
+}
+
+app-movie-dropdowns {
+  width: 60%;
+}
+
+.filterMenu {
+  margin-top: 10px;
+}
+
+.mat-menu-content:not(:empty) {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  background-color: rgb(48, 48, 48);
+}
+
+.userOptions {
+  color: white;
+}
+
+.mat-menu-item {
+  color: white;
+}
+
+.filter {
+  margin-left: 80%;
+  background-color: rgb(48, 48, 48);
+}

@@ -1,0 +1,43 @@
+<div fxLayout="column" fxLayoutGap="3%">
+  <div class="dropDowns">
+    <app-movie-dropdowns [languageList]="languageList" (languageChange$)="getLanguage($event)"
+      (genreChange$)="getGenre($event)" [layout]=" 'row' " fxHide.xs="true"></app-movie-dropdowns>
+    <button mat-button [matMenuTriggerFor]="filter" fxHide.xs="false" fxHide.gt-xs="true" class="filter" name="filter">
+      <mat-icon>filter_list</mat-icon>
+    </button>
+  </div>
+  <div>
+    <mat-tab-group (selectedIndexChange)="tabChanged($event)" class="tabsGroup">
+      <mat-tab label="Now Showing">
+        <ng-template matTabContent class="movieList">
+
+          <div class="cards-container" fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxLayoutGap="2%">
+            <ng-container *ngFor="let movie of upcomingList">
+              <app-movie-card class=" seach-movies-cards" [movie]="movie" [theaterList]="theaterList"
+                [category]="'nowPlaying'">
+              </app-movie-card>
+            </ng-container>
+          </div>
+
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Next Change" class="labelFont">
+        <ng-template matTabContent>
+
+          <div class="cards-container" fxLayout="row wrap" fxLayoutAlign="space-evenly center">
+            <ng-container *ngFor="let movie of moviesList">
+              <app-movie-card class="seach-movies-cards" [movie]="movie" [theaterList]="theaterList"
+                [category]="'upComing'"></app-movie-card>
+            </ng-container>
+          </div>
+
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+<mat-menu #filter="matMenu" xPosition="before">
+  <app-movie-dropdowns [languageList]="languageList" (languageChange$)="getLanguage($event)"
+    (genreChange$)="getGenre($event)" [layout]=" 'column' "></app-movie-dropdowns>
+</mat-menu>
