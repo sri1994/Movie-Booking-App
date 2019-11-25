@@ -1,0 +1,10 @@
+<app-home-page *ngIf="!(homeService?.isNowShowingMovieLoading)" [moviesList]="nowPlayingMoviesList" [upcomingList]="upcomingMoviesList | async"
+  [theaterList]="theaterList" [userPreference]="userPreference"
+  (getNewNowPlayingMovies)="getNewSetofNowPlayingMovies($event)"
+  (getNewUpcomingMovies)="getNewSetofComingMovies($event)"></app-home-page>
+
+<mat-spinner *ngIf="(homeService?.isNowShowingMovieLoading)"></mat-spinner>
+<!-- 
+<app-home-page [moviesList]="nowPlayingMoviesList" [upcomingList]="upcomingMoviesList" [theaterList]="theaterList | async"
+  [userPreference]="userPreference" (getNewNowPlayingMovies)="getNewSetofNowPlayingMovies($event)"
+  (getNewUpcomingMovies)="getNewSetofComingMovies($event)"></app-home-page> -->

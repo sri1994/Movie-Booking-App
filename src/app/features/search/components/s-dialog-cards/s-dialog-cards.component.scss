@@ -1,0 +1,31 @@
+.item {
+  max-height: auto;
+  max-width: 350px;
+}
+
+// .search-title {
+//   width: 100%;
+// }
+
+.card-image {
+  max-height: 120px;
+  max-width: 80px;
+  float: right;
+  margin: 1px 1px 1px 1px;
+}
+
+mat-card {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: black;
+  color: white;
+}
+
+.movieList {
+  background-color: #d8d8d8;
+}
+
+.bookNowButton {
+  color: white;
+  background-color: blue;
+}

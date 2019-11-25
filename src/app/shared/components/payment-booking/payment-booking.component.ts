@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { MaterialModule } from '../../../material.module';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
+import { MatDialog } from '@angular/material';
 import { ConfirmationModalComponent } from '../../components/modals/confirmation-modal/confirmation-modal.component';
 import { ActivatedRoute } from '@angular/router';
 @Component({
@@ -23,18 +22,19 @@ export class PaymentBookingComponent implements OnInit {
     this.fiveParam = this.route.snapshot.params.total;
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
   openConfirmDialog() {
     const dialogRef = this.dialog.open(ConfirmationModalComponent, {
       disableClose: true,
       data: {
-        name: this.firstParam, theater: this.secondParam,
-        time: this.thirdParam, seat: this.fourthParam, total: this.fiveParam
+        name: this.firstParam,
+        theater: this.secondParam,
+        time: this.thirdParam,
+        seat: this.fourthParam,
+        total: this.fiveParam
       }
     });
     // dialogRef.afterClosed().subscribe(result => {
     // });
   }
 }
-
-

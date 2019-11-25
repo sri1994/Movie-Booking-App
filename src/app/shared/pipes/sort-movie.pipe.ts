@@ -39,7 +39,9 @@ export class SortMoviePipe implements PipeTransform {
             remainingList.push(movie);
           }
         }
-        return preferedList.concat(remainingList);
+        const tempList: any = preferedList.concat(remainingList);
+        tempList.sort((a, b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
+        return tempList;
       } else {
         return moviesList;
       }

@@ -1,0 +1,11 @@
+<h3 class="text-center">Add Theatre in dynamic form!</h3>
+
+<br>
+
+<app-dynamic-form [fields]="regConfig" (submit)="submit($event)">
+</app-dynamic-form>
+
+<ng-template #successDialog>
+  <div>New Theater added sucessfully </div>
+  <button mat-raised-button class="accept" color="primary" (click)="dialogOk()">OK</button>
+</ng-template>

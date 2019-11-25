@@ -1,6 +1,7 @@
 {
   "userDetails": {
-    "users": [{
+    "users": [
+      {
         "uid": "101590852450539536978",
         "name": "Punith Gowda N",
         "image": "https://lh3.googleusercontent.com/a-/AAuE7mDVwHhauttwavwJycmv7PhK-GrdSwoCKLSytD21=s96-c",
@@ -31,19 +32,96 @@
           "movieId": "",
           "rating": ""
         }
+      },
+      {
+        "uid": "116201882819108016222",
+        "name": "srinivas jamadagni",
+        "image": "https://lh3.googleusercontent.com/a-/AAuE7mDBAU7t1y8yPYx_fRCA8hX9BrQ1hE9LG33oq79-FQ=s96-c",
+        "email": "srinivasjamadagni94@gmail.com",
+        "role": "Admin",
+        "preferences": {
+          "lang": "en",
+          "generes": [],
+          "theaters": []
+        },
+        "ratings": {
+          "movieId": "",
+          "rating": ""
+        }
       }
     ]
   },
   "theater": {
-    "theaters": [{
-      "tid": "1",
-      "name": "Kapali",
-      "city": "Bangalore",
-      "gLocation": "test",
-      "capacity": 50,
-      "movies": [
-        474350
-      ]
-    }]
-  }
+    "theaters": [
+      {
+        "tid": "1",
+        "name": "Kapali",
+        "city": "Bangalore",
+        "gLocation": "test",
+        "capacity": 50,
+        "movies": [566404]
+      },
+      {
+        "tid": "34",
+        "name": "Rockline",
+        "city": "Bengaluru",
+        "gLocation": "fdsfdgfdgfhfhf",
+        "capacity": "45"
+      }
+    ]
+  },
+  "logs": [
+    {
+      "id": 991,
+      "log": "Mon Nov 25 2019 17:33:23 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 545,
+      "log": "Mon Nov 25 2019 17:34:46 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 0.5030598902856966,
+      "log": "Mon Nov 25 2019 17:34:46 GMT+0530 (India Standard Time) - Type: All - Message: Http failure response for (unknown url): 0 Unknown Error"
+    },
+    {
+      "id": 0.490153731190591,
+      "log": "Mon Nov 25 2019 17:34:49 GMT+0530 (India Standard Time) - Type: All - Message: Http failure response for (unknown url): 0 Unknown Error"
+    },
+    {
+      "id": 937,
+      "log": "Mon Nov 25 2019 17:35:31 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 683,
+      "log": "Mon Nov 25 2019 17:36:02 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 247,
+      "log": "Mon Nov 25 2019 17:39:51 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 729,
+      "log": "Mon Nov 25 2019 17:40:04 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 315,
+      "log": "Mon Nov 25 2019 17:40:37 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 493,
+      "log": "Mon Nov 25 2019 17:40:46 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 730,
+      "log": "Mon Nov 25 2019 17:40:59 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 654,
+      "log": "Mon Nov 25 2019 17:41:24 GMT+0530 (India Standard Time)In app component ngOnInit"
+    },
+    {
+      "id": 368,
+      "log": "Mon Nov 25 2019 17:42:30 GMT+0530 (India Standard Time)In app component ngOnInit"
+    }
+  ]
 }

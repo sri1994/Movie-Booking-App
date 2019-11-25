@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { environment } from '../../../environments/environment';
 
 import { Store } from '@ngrx/store';
@@ -18,7 +18,7 @@ export class UserDetailService {
   }
 
   authDetails;
-  getUserDetailData(): void {
+   getUserDetailData(): void {
     this.authDetails = JSON.parse(sessionStorage.getItem('authDetails'));
     if (this.authDetails) {
       this.store.dispatch(new SetUser(this.authDetails));
@@ -28,7 +28,7 @@ export class UserDetailService {
   addNewUser(data) {
     let newUsers, newObject;
     let currentData;
-    this.http.get(USERS_URL).subscribe(
+      this.http.get(USERS_URL).subscribe(
       value => {
         newObject = value;
         newUsers = newObject['users'];
@@ -60,4 +60,5 @@ export class UserDetailService {
       }
     );
   }
+
 }

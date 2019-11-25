@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { HomeService } from 'src/app/home/services/home.service';
 import { FormControl } from '@angular/forms';
+import { HomeService } from 'src/app/features/home/services/home.service';
 
 @Component({
   selector: 'app-movie-dropdowns',
@@ -8,7 +8,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./movie-dropdowns.component.scss']
 })
 export class MovieDropdownsComponent implements OnInit {
-  genresList: any = [];
+  genresList = [];
   @Input() layout;
   @Input() languageList;
   @Output() languageChange$: EventEmitter<any>;
@@ -30,15 +30,19 @@ export class MovieDropdownsComponent implements OnInit {
 
   ngOnInit() {
     this.genresList = this.homeService.getGenres();
-    this.languageSelector.valueChanges.subscribe((value) => {
+    this.languageSelector.valueChanges.subscribe(value => {
       this.languageSelected = value ? true : false;
       this.languageChange$.emit(value);
     });
-    this.generSelector.valueChanges.subscribe((value) => {
+    this.generSelector.valueChanges.subscribe(value => {
       this.genreSelected = value ? true : false;
       this.genreObj.value = value;
       this.genreObj = Object.assign({}, this.genreObj);
       this.genreChange$.emit(this.genreObj);
     });
+  }
+
+  track(_index, item) {
+    return item;
   }
 }

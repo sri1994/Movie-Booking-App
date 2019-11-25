@@ -1,7 +1,7 @@
+import { MaterialModule } from './Material/material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MovieBookingComponent } from './movie-booking/movie-booking.component';
-import { MaterialModule } from '../material.module';
 import {
   MatDialogModule,
   MatCardModule,
@@ -14,13 +14,14 @@ import {
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SeatReservationModalComponent } from './components/modals/seat-reservation-modal/seat-reservation-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UiService } from './ui-service.service';
 import { MovieDropdownsComponent } from './movie-dropdowns/movie-dropdowns.component';
 import { ConfirmationModalComponent } from './components/modals/confirmation-modal/confirmation-modal.component';
 import { PaymentBookingComponent } from './components/payment-booking/payment-booking.component';
 import { SortMoviePipe } from './pipes/sort-movie.pipe';
 import { HomeFilterPipe } from './pipes/home-filter.pipe';
 import { PreBookingComponent } from './components/modals/pre-booking/pre-booking.component';
+import { OfflineDialogComponent } from '../components/modals/offline-dialog/offline-dialog.component';
+
 @NgModule({
   declarations: [
     MovieBookingComponent,
@@ -30,7 +31,8 @@ import { PreBookingComponent } from './components/modals/pre-booking/pre-booking
     PaymentBookingComponent,
     SortMoviePipe,
     HomeFilterPipe,
-    PreBookingComponent
+    PreBookingComponent,
+    OfflineDialogComponent
   ],
   imports: [
     FormsModule,
@@ -49,10 +51,15 @@ import { PreBookingComponent } from './components/modals/pre-booking/pre-booking
     MovieDropdownsComponent,
     SortMoviePipe,
     HomeFilterPipe,
-    PreBookingComponent
+    PreBookingComponent,
+    MaterialModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [{ provide: MatDialogRef, useValue: {} }, { provide: MAT_DIALOG_DATA, useValue: [] }],
-  entryComponents: [ConfirmationModalComponent],
+  entryComponents: [ConfirmationModalComponent, OfflineDialogComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule {}

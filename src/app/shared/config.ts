@@ -16,5 +16,6 @@ export const JSON_SERVER_URLS = {
   THEATER_URL: '/theater',
   USER_DETAILS: '/userDetails',
   USER_RATING: '/userRatings',
-  BOOKING_DETAILS: '/bookingDetails'
+  BOOKING_DETAILS: '/bookingDetails',
+  LOGGER_URL: '/logs'
 };

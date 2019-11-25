@@ -1,29 +1,21 @@
-import {
-  CanActivate,
-  ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  Router
-} from '@angular/router';
-import { Injectable } from '@angular/core';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
+import { Injectable, OnDestroy } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as UserState from '../../../../app/reducers/index';
 import { User } from 'src/app/core/models/user.model';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AdminguardService implements CanActivate {
-
+export class AdminguardService implements CanActivate, OnDestroy {
   userDetails: User;
-  constructor(
-    private router: Router,
-    private store: Store<UserState.State>
-  ) { }
+  userDetailsSubs: Subscription;
+  constructor(private router: Router, private store: Store<UserState.State>) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    this.store.select(UserState.userSelector).subscribe(result => {
+    this.userDetailsSubs = this.store.select(UserState.userSelector).subscribe(result => {
       this.userDetails = result;
-      console.log('userDetails auth check', this.userDetails);
     });
     const authValid = this.userDetails;
     if (authValid && authValid.id !== '' && authValid.role === 'Admin') {
@@ -32,5 +24,11 @@ export class AdminguardService implements CanActivate {
     // not logged in so redirect to login page with the return url
     this.router.navigate(['/home']);
     return false;
+  }
+
+  ngOnDestroy() {
+    if (this.userDetailsSubs && !this.userDetailsSubs.closed) {
+      this.userDetailsSubs.unsubscribe();
+    }
   }
 }

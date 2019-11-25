@@ -12,8 +12,7 @@ export class ConfirmationModalComponent implements OnInit {
 
   constructor(private dialogRef: MatDialogRef<ConfirmationModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private router: Router) {
-    console.log('confirmation booking', data);
-  }
+   }
 
   ngOnInit() {
   }
